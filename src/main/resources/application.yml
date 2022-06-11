@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 1bbf4019-6350-42e6-ba3b-e4adef71a617
-    url: jdbc:mysql://81:3306/simple_blog?useSSL=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true
+    url: jdbc:mysql://81.68.132.89:3306/simple_blog?useSSL=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
