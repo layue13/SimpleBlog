@@ -6,10 +6,10 @@ import java.util.Date;
 
 @Data
 public class Article {
-    private int id;
+    private Integer id;
     private String title;
     private String content;
     private Date publishTime;
-    private long commentAmount;
+    private Long commentAmount;
     private User publisher;
 }
