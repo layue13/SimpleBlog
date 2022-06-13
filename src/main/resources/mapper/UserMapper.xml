@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sblog.simpleblog.dao.UserMapper">
+
+    <select id="findAllUser" resultType="User">
+        select id, username, nickname, password, pass_question, pass_question_answer
+        from tb_user
+    </select>
+
+    <select id="findUserById" resultType="User">
+        select id, username, nickname, password, pass_question, pass_question_answer
+        from tb_user
+        where id = #{id}
+    </select>
+
+    <select id="findUserByName" resultType="User">
+        select id, username, nickname, password, pass_question, pass_question_answer
+        from tb_user
+        where username = #{username}
+    </select>
+
+    <insert id="apply" parameterType="User">
+        insert into tb_user (username, nickname, password, pass_question, pass_question_answer)
+        VALUES (#{name}, #{nickName}, #{password}, #{passwordQuestion}, #{passwordQuestionAnswer})
+    </insert>
+
+    <update id="modifyUser" parameterType="User">
+        update tb_user
+        set username = #{name},
+            nickname = #{nickName}
+        where id = #{id}
+    </update>
+
+    <delete id="removeUserById" parameterType="int">
+        delete
+        from tb_user
+        where id = 4
+    </delete>
+
+    <!--    动态删除-->
+    <delete id="removeUserByIds" parameterType="int">
+        delete from tb_user
+        where
+        <foreach collection="int" open="id=" item="id">id = #{id}</foreach>
+    </delete>
+
+</mapper> 

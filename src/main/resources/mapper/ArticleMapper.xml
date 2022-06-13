@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sblog.simpleblog.dao.ArticleMapper">
+
+    <select id="findAllArticle" resultType="Article">
+        select id, title, content, publish_user_id, publish_time, comment_amount
+        from simple_blog.tb_article
+    </select>
+
+    <select id="findArticleByUserId" resultType="Article" parameterType="int">
+        select id, title, content, publish_user_id, publish_time, comment_amount
+        from simple_blog.tb_article
+        where id = #{id}
+    </select>
+
+    <insert id="applyArticle" parameterType="Article">
+        insert into simple_blog.tb_article (title, content, publish_user_id, publish_time, comment_amount)
+        VALUES (#{title}, #{content}, #{publisher.id}, #{publishTime}, #{commentAmount});
+    </insert>
+
+    <update id="modifyArticle" parameterType="Article">
+        update simple_blog.tb_article
+        set title          = #{title},
+            content        = #{content},
+            publish_time   = #{publishTime},
+            comment_amount = #{commentAmount}
+        where id = #{id};
+    </update>
+
+    <delete id="removeArticleById" parameterType="int">
+        delete
+        from simple_blog.tb_article
+        where id = #{id}
+    </delete>
+
+</mapper> 

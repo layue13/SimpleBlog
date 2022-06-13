@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sblog.simpleblog.dao.CommentMapper">
+
+    <select id="findAllComment" resultType="Comment">
+        select id, article_id, content, comment_user_id
+        from simple_blog.tb_comment
+    </select>
+
+    <select id="findCommentById" resultType="Comment" parameterType="int">
+        select article_id, content, comment_user_id
+        from simple_blog.tb_comment
+        where id = #{id};
+    </select>
+
+    <insert id="apply" parameterType="Comment">
+        insert into simple_blog.tb_comment(article_id, content, comment_user_id)
+        VALUES (#{id}, #{content}, #{owner.id});
+    </insert>
+
+    <update id="modify" parameterType="Comment">
+        update simple_blog.tb_comment
+        set article_id      = #{article.id},
+            content         = #{content},
+            comment_user_id = #{owner.id}
+        where id = #{id};
+    </update>
+
+    <delete id="removeById" parameterType="int">
+        delete
+        from simple_blog.tb_comment
+        where id = #{id};
+    </delete>
+
+</mapper> 

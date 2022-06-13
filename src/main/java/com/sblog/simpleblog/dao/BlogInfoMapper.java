@@ -16,11 +16,11 @@ public interface BlogInfoMapper {
 
     BlogInfo findBlogTitleByUserId(int id);
 
-    int insert(BlogInfo blogInfo);
+    int apply(BlogInfo blogInfo);
 
-    int update(BlogInfo blogInfo);
+    int modify(BlogInfo blogInfo);
 
-    int deleteById(int Id);
+    int removeById(int Id);
 
 
 }
