@@ -304,4 +304,30 @@ a.dark:active, a.dark:link, a.dark:visited {
     color: #000;
 }
 
-.header {
+#search-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 26px;
+    height: 100%;
+    transition: filter .15s;
+    background-image: url(../static/img/search_icon_light.png);
+    background-color: transparent;
+    background-size: 17px 17px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: opacity(40%);
+}
+#search-container #search {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 1px;
+    border: 0;
+    font-family: helvetica neue,luxi sans,Tahoma,hiragino sans gb,STHeiti,sans-serif;
+    background-color: transparent;
+    border: none;
+}
