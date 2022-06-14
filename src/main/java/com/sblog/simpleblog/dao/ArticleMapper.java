@@ -1,6 +1,7 @@
 package com.sblog.simpleblog.dao;
 
 import com.sblog.simpleblog.entity.Article;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -8,6 +9,7 @@ import java.util.List;
  * @author 32958
  * 文章信息表
  */
+@Mapper
 public interface ArticleMapper {
 
     List<Article> findAllArticle();

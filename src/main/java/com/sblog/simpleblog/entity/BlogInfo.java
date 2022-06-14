@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class BlogInfo {
-    private int id;
+    private Integer id;
     private String title;
     private String signature;
     private User user;
