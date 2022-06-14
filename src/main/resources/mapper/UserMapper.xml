@@ -4,22 +4,31 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sblog.simpleblog.dao.UserMapper">
 
-    <select id="findAllUser" resultType="User">
+    <select id="findAllUser" resultMap="UserMap">
         select id, username, nickname, password, pass_question, pass_question_answer
         from tb_user
     </select>
 
-    <select id="findUserById" resultType="User">
+    <select id="findUserById" resultMap="UserMap">
         select id, username, nickname, password, pass_question, pass_question_answer
         from tb_user
         where id = #{id}
     </select>
 
-    <select id="findUserByName" resultType="User">
+    <select id="findUserByName" resultMap="UserMap">
         select id, username, nickname, password, pass_question, pass_question_answer
         from tb_user
         where username = #{username}
     </select>
+
+    <resultMap id="UserMap" type="User">
+        <id column="id" property="id"/>
+        <result column="username" property="name"/>
+        <result column="nickname" property="nickName"/>
+        <result column="password" property="password"/>
+        <result column="pass_question" property="passwordQuestion"/>
+        <result column="pass_question_answer" property="passwordQuestionAnswer"/>
+    </resultMap>
 
     <insert id="apply" parameterType="User">
         insert into tb_user (username, nickname, password, pass_question, pass_question_answer)
@@ -36,7 +45,7 @@
     <delete id="removeUserById" parameterType="int">
         delete
         from tb_user
-        where id = 4
+        where id = #{id}
     </delete>
 
     <!--    动态删除-->

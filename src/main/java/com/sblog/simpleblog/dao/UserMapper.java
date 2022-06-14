@@ -24,5 +24,6 @@ public interface UserMapper {
 
     int removeUserById(int id);
 
+    List<User> selectByKeyword(String keyword);
 
 }

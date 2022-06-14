@@ -24,5 +24,4 @@ public interface BlogInfoMapper {
 
     int removeById(int Id);
 
-
 }
