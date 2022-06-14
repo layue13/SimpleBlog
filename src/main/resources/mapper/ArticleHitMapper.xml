@@ -9,6 +9,12 @@
         from simple_blog.tb_hits;
     </select>
 
+    <select id="isExistArticleHit" parameterType="ArticleHit" resultType="int">
+        SELECT 1
+        FROM tb_user
+        WHERE article_id = #{id} LIMIT 1
+    </select>
+
     <insert id="apply" parameterType="ArticleHit">
         insert into simple_blog.tb_hits(article_id, hits_ip, hits_time)
         VALUES (#{id}, #{hitIp}, #{hitTime});

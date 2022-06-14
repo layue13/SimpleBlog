@@ -26,6 +26,24 @@
                  left join simple_blog.tb_user tbuser on simple_blog.tb_article.publish_user_id = tbuser.id
     </select>
 
+    <select id="findById" resultMap="ArticleWithUser" parameterType="int">
+        select tb_article.id,
+               title,
+               content,
+               publish_user_id,
+               publish_time,
+               comment_amount,
+               tbuser.id as uid,
+               username,
+               nickname,
+               password,
+               pass_question,
+               pass_question_answer
+        from simple_blog.tb_article
+                 left join simple_blog.tb_user tbuser on simple_blog.tb_article.publish_user_id = tbuser.id
+        WHERE tb_article.id = #{id}
+    </select>
+
 
     <select id="findArticleByUserId" resultMap="ArticleWithUser" parameterType="int">
         select tb_article.id,
@@ -42,8 +60,13 @@
                pass_question_answer
         from simple_blog.tb_article
                  left join simple_blog.tb_user tbuser on simple_blog.tb_article.publish_user_id = tbuser.id
-        where tb_article.id like '%${keyword}%'
-           or tbuser.id like '%${keyword}%'
+        where tbuser.id = #{id}
+    </select>
+
+    <select id="isHaveUser" resultType="int" parameterType="Article">
+        SELECT 1
+        FROM tb_user
+        WHERE title = #{title} LIMIT 1
     </select>
 
     <resultMap id="ArticleWithUser" type="Article">

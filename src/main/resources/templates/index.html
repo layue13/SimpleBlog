@@ -7,7 +7,35 @@
 <body>
 <div th:replace="~{fragments/header::head}"></div>
 <div th:replace="~{fragments/nav-bar::nav-bar}"></div>
+<div>
+    <hr/>
+</div>
+<div class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
 
+            </li>
+            <li class="page-item"><a class="page-link" th:href="@{/index(startPage=${articleList.pageNum})}" th:text="${articleList.pageNum}"></a></li>
+            <li class="page-item"><a class="page-link" th:href="@{/index(startPage=${articleList.pageNum+1})}" th:text="${articleList.pageNum+1}"></a></li>
+            <li class="page-item"><a class="page-link" th:href="@{/index(startPage=${articleList.pageNum+2})}" th:text="${articleList.pageNum+2}"></a></li>
+            <li class="page-item">
+
+            </li>
+        </ul>
+    </nav>
+<ul class="list-group">
+    <li class="list-group-item" th:each="article:${articleList.list}">
+        <a ><div th:text="${article.title}"></div></a>
+        <div th:text="${article.publisher.nickName}"></div>
+        <div th:text="${article.publishTime}"></div>
+    </li>
+</ul>
+
+</div>
+<div>
+    <hr/>
+</div>
 <div th:replace="~{fragments/footer::foot}"></div>
 </body>
 </html>

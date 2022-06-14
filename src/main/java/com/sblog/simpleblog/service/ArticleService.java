@@ -1,12 +1,19 @@
 package com.sblog.simpleblog.service;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import com.sblog.simpleblog.entity.Article;
 import com.sblog.simpleblog.entity.User;
 
 public interface ArticleService {
-    PageInfo<Article> findArticleByUser(User user, int startPage, int pageSize);
+    PageInfo<Article> findByUser(User user, int startPage, int pageSize);
 
-    PageInfo<Article> findAllArticle(int startPage,int pageSize);
+    PageInfo<Article> findAll(int startPage, int pageSize);
+
+    Article findById(int articleId);
+
+    boolean update(Article article);
+
+    boolean remove(Article article);
+
+    boolean add(Article article);
 }

@@ -17,16 +17,31 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean login(String username, String password) {
+    public User login(String username, String password) {
         User user = userMapper.findUserByName(username);
-        if (user == null) {
-            return false;
+        if (user.getPassword().equals(password)) {
+            return user;
         }
-        return user.getPassword().equals(password);
+        return null;
     }
 
     @Override
-    public User findUserById(int id) {
+    public boolean register(User user) {
+        return userMapper.apply(user) > 0;
+    }
+
+    @Override
+    public User findById(int id) {
         return userMapper.findUserById(id);
+    }
+
+    @Override
+    public boolean update(User user) {
+        return userMapper.modifyUser(user) > 0;
+    }
+
+    @Override
+    public boolean existsByName(String username) {
+        return (userMapper.isExistUser(username) == 1) ? true : false;
     }
 }

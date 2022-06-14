@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * @author 32958
  */
@@ -22,15 +24,17 @@ class UserMapperTest {
 
     @Test
     void findAllUser() {
+        assertEquals(userMapper.findAllUser().get(0).getNickName(), "jack");
     }
 
     @Test
     void findUserById() {
-//        assertEquals(userMapper.findUserById(2).getName(),"2782911547");
+        assertEquals(userMapper.findUserById(1).getName(), "2782911547");
     }
 
     @Test
     void findUserByName() {
+        assertEquals(userMapper.findAllUser().get(0).getName(), "2782911547");
     }
 
     @Test

@@ -14,6 +14,8 @@ public interface ArticleMapper {
 
     List<Article> findAllArticle();
 
+    Article findById(int id);
+
     List<Article> findArticleByUserId(int userId);
 
 //    List<Article> findArticleByTimeRange(Date startTime, Date endTime);
@@ -23,5 +25,7 @@ public interface ArticleMapper {
     int modifyArticle(Article article);
 
     int removeArticleById(int Id);
+
+    int isExistArticle(Article article);
 
 }

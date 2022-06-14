@@ -2,11 +2,35 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>文章信息</title>
 </head>
 <body>
 <div th:replace="~{fragments/header::head}"></div>
 <div th:replace="~{fragments/nav-bar::nav-bar}"></div>
+<div>
+    <hr/>
+</div>
+<div class="container">
+
+    <!--/*@thymesVar id="user" type="com.sblog.simpleblog.entity.User"*/-->
+    <!--/*@thymesVar id="id" type="com.sblog.simpleblog.entity.User.id"*/-->
+    <div th:text="${user.name}"></div>
+    <div th:text="${user.nickName}"></div>
+    <!--/*@thymesVar id="articles" type="com.sblog.simpleblog.entity.Article"*/-->
+    <div th:each="article:${articles.list}">
+        <div style="font-size: 20px; color: cornflowerblue " th:text="${article.title}"></div>
+        <br>
+        <div style="border-color: cyan;border:2px solid" th:text="${article.content}"></div>
+        <br>
+        <div style="float: left" th:text="${article.publishTime}"></div>
+        <div style="float: right;color: chocolate" th:text="${article.commentAmount}"></div>
+        <br>
+    </div>
+</div>
+
+<div>
+    <hr/>
+</div>
 
 <div th:replace="~{fragments/footer::foot}"></div>
 </body>
