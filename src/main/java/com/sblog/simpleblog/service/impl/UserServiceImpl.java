@@ -26,7 +26,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUserById(int id) {
+    public boolean register(User user) {
+        return false;
+    }
+
+    @Override
+    public User findById(int id) {
         return userMapper.findUserById(id);
+    }
+
+    @Override
+    public boolean update(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean existsByName(String username) {
+        return false;
     }
 }
