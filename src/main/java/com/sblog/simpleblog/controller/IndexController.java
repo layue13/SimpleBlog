@@ -1,7 +1,6 @@
 package com.sblog.simpleblog.controller;
 
 import com.sblog.simpleblog.service.ArticleService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +19,7 @@ public class IndexController {
     @GetMapping("/index")
     public ModelAndView indexView(@RequestParam(name="startPage",defaultValue = "1",required = false) int startPage,@RequestParam(name="pageSize",defaultValue = "12",required = false) int pageSize){
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("articleList",articleService.findAllArticle(startPage, pageSize));
+        modelAndView.addObject("articleList",articleService.findAll(startPage, pageSize));
         return modelAndView;
     }
 }

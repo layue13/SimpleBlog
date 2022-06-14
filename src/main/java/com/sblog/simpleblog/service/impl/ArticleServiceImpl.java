@@ -23,19 +23,34 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public PageInfo<Article> findArticleByUser(User user, int startPage, int pageSize) {
+    public PageInfo<Article> findByUser(User user, int startPage, int pageSize) {
         PageHelper.startPage(startPage,pageSize);
         PageInfo<Article> page = new PageInfo<>(articleMapper.findArticleByUserId(user.getId()));
         return page;
     }
 
     @Override
-    public PageInfo<Article> findAllArticle(int startPage, int pageSize) {
+    public PageInfo<Article> findAll(int startPage, int pageSize) {
         PageHelper.startPage(startPage, pageSize);
         List<Article> allArticle = articleMapper.findAllArticle();
         allArticle = allArticle.stream()
                 .sorted(Comparator.comparing(Article::getPublishTime))
                 .collect(Collectors.toList());
         return new PageInfo<>(allArticle);
+    }
+
+    @Override
+    public boolean update(Article article) {
+        return false;
+    }
+
+    @Override
+    public boolean remove(Article article) {
+        return false;
+    }
+
+    @Override
+    public boolean add(Article article) {
+        return false;
     }
 }
