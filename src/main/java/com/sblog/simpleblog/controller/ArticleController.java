@@ -36,7 +36,6 @@ public class ArticleController {
     @GetMapping("/{id}")
     public ModelAndView articleDetailsView(@PathVariable int id) {
         ModelAndView modelAndView = new ModelAndView("/article/detail");
-
         return modelAndView;
     }
 
@@ -47,19 +46,19 @@ public class ArticleController {
     }
 
     @GetMapping("delete")
-    public ModelAndView deleteArticleAction(@RequestParam(name = "id") int id, HttpSession session){
+    public ModelAndView deleteArticleAction(@RequestParam(name = "id") int id, @Autowired HttpSession session){
         ModelAndView modelAndView= new ModelAndView("/article/delete");
         return modelAndView;
     }
 
     @GetMapping("update")
-    public ModelAndView updateArticleView(@RequestParam(name = "id") int id, HttpSession session){
+    public ModelAndView updateArticleView(@RequestParam(name = "id") int id,@Autowired HttpSession session){
         ModelAndView modelAndView= new ModelAndView("/article/update");
         return modelAndView;
     }
 
     @PostMapping("update")
-    public ModelAndView updateArticleAction(Article article, HttpSession session){
+    public ModelAndView updateArticleAction(Article article, @Autowired HttpSession session){
         ModelAndView modelAndView= new ModelAndView("/article/update");
         return modelAndView;
     }
