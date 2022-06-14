@@ -36,8 +36,12 @@ public class ArticleController {
     }
 
     @GetMapping("/{id}")
-    public ModelAndView articleDetailsView(@PathVariable int id) {
+    public ModelAndView articleDetailsView(@PathVariable int id,
+                                           @RequestParam(defaultValue = "1", required = false) int startPage,
+                                           @RequestParam(defaultValue = "12", required = false) int pageSize) {
         ModelAndView modelAndView = new ModelAndView("/article/detail");
+        Article article = articleService.findById(id);
+        commentService.findByArticle(article, startPage, pageSize);
         return modelAndView;
     }
 
@@ -79,6 +83,19 @@ public class ArticleController {
 
     @PostMapping("update")
     public ModelAndView updateArticleAction(Article article, @Autowired HttpSession session) {
+        return new ModelAndView("redirect:/article/list");
+    }
+
+    @GetMapping("add")
+    public ModelAndView addArticleView() {
+        return new ModelAndView("/article/add");
+    }
+
+    @PostMapping("add")
+    public ModelAndView addArticleAction(Article article, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        article.setPublisher(user);
+        articleService.add(article);
         return new ModelAndView("redirect:/article/list");
     }
 }
