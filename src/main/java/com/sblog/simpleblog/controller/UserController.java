@@ -41,7 +41,7 @@ public class UserController {
 
     @GetMapping("register")
     public ModelAndView registerView() {
-        var modelAndView = new ModelAndView("/user/register");
+        ModelAndView modelAndView = new ModelAndView("/user/register");
         return modelAndView;
     }
 
@@ -87,8 +87,9 @@ public class UserController {
     }
 
     @GetMapping("dashboard")
-    public ModelAndView dashboardView() {
+    public ModelAndView dashboardView(@Autowired HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("/user/dashboard");
+        modelAndView.addObject("user", session.getAttribute("user"));
         return modelAndView;
     }
 }
