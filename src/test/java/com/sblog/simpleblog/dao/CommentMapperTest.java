@@ -23,12 +23,13 @@ class CommentMapperTest {
     }
 
     @Test
-    void findAllComment(@Autowired CommentMapper commentMapper) {
+    void findAllComment() {
         assertEquals(commentMapper.findAllComment().get(0).getContent(), "好，讲的非常好");
     }
 
     @Test
     void findCommentById() {
+        assertEquals(commentMapper.findCommentById(1).getContent(), "好，讲的非常好");
     }
 
     @Test

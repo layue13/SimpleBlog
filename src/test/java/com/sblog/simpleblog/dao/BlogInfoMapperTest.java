@@ -1,6 +1,8 @@
 package com.sblog.simpleblog.dao;
 
 import com.sblog.simpleblog.SimpleBlogApplication;
+import com.sblog.simpleblog.entity.BlogInfo;
+import com.sblog.simpleblog.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,14 +37,14 @@ class BlogInfoMapperTest {
 
     @Test
     void apply() {
-//        User user = new User();
-//        user.setId(1);
-//        BlogInfo blogInfo = new BlogInfo();
-//        blogInfo.setSignature("牛逼");
-//        blogInfo.setTitle("牛逼");
-//        blogInfo.setUser(user);
-//        assertEquals(blogInfoMapper.apply(blogInfo),1);
-//        assertEquals(blogInfoMapper.findBlogTitleByUserId(user.getId()).toString(),blogInfo.toString());
+        User user = new User();
+        user.setId(1);
+        BlogInfo blogInfo = new BlogInfo();
+        blogInfo.setSignature("牛逼");
+        blogInfo.setTitle("牛逼");
+        blogInfo.setUser(user);
+        assertEquals(blogInfoMapper.apply(blogInfo), 1);
+        assertEquals(blogInfoMapper.findBlogTitleByUserId(user.getId()).toString(), blogInfo.toString());
     }
 
     @Test
