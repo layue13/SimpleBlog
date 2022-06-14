@@ -9,6 +9,8 @@ public interface ArticleService {
 
     PageInfo<Article> findAll(int startPage, int pageSize);
 
+    Article findById(int articleId);
+
     boolean update(Article article);
 
     boolean remove(Article article);

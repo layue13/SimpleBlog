@@ -54,20 +54,31 @@ public class ArticleController {
     }
 
     @GetMapping("delete")
-    public ModelAndView deleteArticleAction(@RequestParam(name = "id") int id, @Autowired HttpSession session) {
-        ModelAndView modelAndView = new ModelAndView("/article/delete");
-        return modelAndView;
+    public ModelAndView deleteArticleAction(@RequestParam(name = "id") int id,
+                                            @Autowired HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        Article article = articleService.findById(id);
+        if (article.getPublisher().getId().equals(user.getId())) {
+            articleService.remove(article);
+        }
+        return new ModelAndView("redirect:/article/list");
     }
 
     @GetMapping("update")
     public ModelAndView updateArticleView(@RequestParam(name = "id") int id, @Autowired HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("/article/update");
+        User user = (User) session.getAttribute("user");
+        Article article = articleService.findById(id);
+        if (!article.getPublisher().getId().equals(user.getId())) {
+            modelAndView.setViewName("redirect:/article/list");
+        }
+        modelAndView.addObject("user", user);
+        modelAndView.addObject("article", article);
         return modelAndView;
     }
 
     @PostMapping("update")
     public ModelAndView updateArticleAction(Article article, @Autowired HttpSession session) {
-        ModelAndView modelAndView = new ModelAndView("/article/update");
-        return modelAndView;
+        return new ModelAndView("redirect:/article/list");
     }
 }

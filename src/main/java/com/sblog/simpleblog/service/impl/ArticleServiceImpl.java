@@ -40,6 +40,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public Article findById(int articleId) {
+        return articleMapper.findById(articleId);
+    }
+
+    @Override
     public boolean update(Article article) {
         return articleMapper.modifyArticle(article) > 0;
     }
