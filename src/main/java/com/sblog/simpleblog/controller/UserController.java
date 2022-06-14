@@ -88,7 +88,7 @@ public class UserController {
                                     @RequestParam(required = false, name = "pageSize", defaultValue = "10") int pageSize) {
         ModelAndView modelAndView = new ModelAndView("/user/details");
         User user = userService.findById(userId);
-        modelAndView.addObject("user", user);
+        modelAndView.addObject("targetUser", user);
         modelAndView.addObject("articles", articleService.findByUser(user, startPage, pageSize));
         return modelAndView;
     }
@@ -98,5 +98,11 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView("/user/dashboard");
         modelAndView.addObject("user", session.getAttribute("user"));
         return modelAndView;
+    }
+
+    @GetMapping("logout")
+    public ModelAndView logout(@Autowired HttpSession session){
+        session.setAttribute("user",null);
+        return new ModelAndView("redirect:/index");
     }
 }
