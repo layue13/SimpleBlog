@@ -11,17 +11,20 @@
     <hr/>
 </div>
 <div class="container">
+
     <!--/*@thymesVar id="user" type="com.sblog.simpleblog.entity.User"*/-->
     <!--/*@thymesVar id="id" type="com.sblog.simpleblog.entity.User.id"*/-->
     <div th:text="${user.name}"></div>
     <div th:text="${user.nickName}"></div>
-    <div th:text="${user.id}"></div>
     <!--/*@thymesVar id="articles" type="com.sblog.simpleblog.entity.Article"*/-->
     <div th:each="article:${articles.list}">
-        <div th:text="${article.title}"></div>
-        <div th:text="${article.content}"></div>
-        <div th:text="${article.publishTime}"></div>
-        <div th:text="${article.commentAmount}"></div>
+        <div style="font-size: 20px; color: cornflowerblue " th:text="${article.title}"></div>
+        <br>
+        <div style="border-color: cyan;border:2px solid" th:text="${article.content}"></div>
+        <br>
+        <div style="float: left" th:text="${article.publishTime}"></div>
+        <div style="float: right;color: chocolate" th:text="${article.commentAmount}"></div>
+        <br>
     </div>
 </div>
 
