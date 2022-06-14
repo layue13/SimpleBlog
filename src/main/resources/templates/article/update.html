@@ -5,6 +5,37 @@
     <title>更新</title>
 </head>
 <body>
+<div th:replace="~{fragments/header::head}"></div>
+<div th:replace="~{fragments/nav-bar::nav-bar}"></div>
+<div>
+    <br/>
+</div>
 
+<div class="container">
+    <div th:replace="~{fragments/user/left-bar::left-bar}"></div>
+    <h4 class="page-title">信息更改</h4>
+    <div class="mb-3">
+        <label>更改标题</label>
+        <br>
+        <input>
+        <br>
+        <label for="exampleFormControlTextarea1" class="form-label">更改内容</label>
+        <br>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <br>
+        <label>更改发布时间</label>
+        <br>
+        <input>
+        <br>
+        <label>更改发布者</label>
+        <br>
+        <input>
+    </div>
+    <button type="button" class="btn btn-primary">更新</button>
+</div>
+<div>
+    <br/>
+</div>
+<div th:replace="~{fragments/footer::foot}"></div>
 </body>
 </html>
