@@ -12,8 +12,8 @@
 </div>
 <div class="container">
     <div th:replace="~{fragments/user/left-bar::left-bar}"></div>
-    <div th:text="${targetUser.name}"></div>
-    <div th:text="${tartgetUser.nickName}"></div>
+    <div th:text="${user.name}"></div>
+    <div th:text="${user.nickName}"></div>
     <div th:each="article:${articles.list}">
         <div style="font-size: 20px; color: cornflowerblue " th:text="${article.title}"></div>
         <br>
