@@ -13,12 +13,25 @@
 
 <div class="container">
     <div th:replace="~{fragments/user/left-bar::left-bar}"></div>
+    <h4 class="page-title">信息添加</h4>
     <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">文章发表</label>
+        <label>文章标题</label>
+        <br>
+        <input>
+        <br>
+        <label for="exampleFormControlTextarea1" class="form-label">文章内容</label>
         <br>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <br>
+        <label>发布时间</label>
+        <br>
+        <input>
+        <br>
+        <label>发布者</label>
+        <br>
+        <input>
     </div>
-    <button type="button" class="btn btn-primary">上传</button>
+    <button type="button" class="btn btn-primary">确定</button>
 </div>
 <div>
     <br/>
