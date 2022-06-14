@@ -87,7 +87,7 @@ public class UserController {
     }
 
     @GetMapping("dashboard")
-    public ModelAndView dashboardView(HttpSession session) {
+    public ModelAndView dashboardView() {
         ModelAndView modelAndView = new ModelAndView("/user/dashboard");
         return modelAndView;
     }
