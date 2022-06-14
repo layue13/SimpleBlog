@@ -11,28 +11,26 @@
     <hr/>
 </div>
 <div class="container">
-    <form class="was-validated">
-    <div class="col-md-4 position-relative">
-        <label for="validationTooltip02" class="form-label">用户名</label>
-        <input name="name" type="text" class="form-control is-invalid" id="validationTooltip02" required>
-
-    </div>
-    <br/>
-    <div class="col-md-4 position-relative">
-        <label for="validationTooltipUsername" class="form-label">密码</label>
-        <div class="input-group has-validation">
-            <input name="password" type="text" class="form-control is-invalid" id="validationTooltipUsername"
-                   aria-describedby="validationTooltipUsernamePrepend" required>
+    <form class="was-validated" method="post" action="/user/login">
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label">用户名</label>
+            <input name="username" type="text" class="form-control is-invalid" id="validationTooltip02" required>
 
         </div>
-    </div>
-            <br/>
-            <div class="col-12">
-                <button class="btn btn-primary" type="submit">登入</button>
+        <br/>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltipUsername" class="form-label">密码</label>
+            <div class="input-group has-validation">
+                <input name="password" type="text" class="form-control is-invalid" id="validationTooltipUsername"
+                       aria-describedby="validationTooltipUsernamePrepend" required>
             </div>
-
-</form>
-    </div>
+        </div>
+        <br/>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">登入</button>
+        </div>
+    </form>
+</div>
 </div>
 
 <div>
