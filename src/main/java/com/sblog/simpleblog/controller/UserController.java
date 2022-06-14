@@ -3,7 +3,6 @@ package com.sblog.simpleblog.controller;
 import com.sblog.simpleblog.entity.User;
 import com.sblog.simpleblog.service.ArticleService;
 import com.sblog.simpleblog.service.UserService;
-import net.sf.jsqlparser.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -30,18 +29,13 @@ public class UserController {
 
     @GetMapping("login")
     public ModelAndView loginView() {
-        ModelAndView modelAndView = new ModelAndView("/user/login");
+        var modelAndView = new ModelAndView("/user/login");
         return modelAndView;
     }
 
     @PostMapping("login")
-    public ModelAndView loginAction(@RequestParam("username") String username, @RequestParam("password") String password, @Autowired HttpSession session) {
-        ModelAndView modelAndView = new ModelAndView("/user/login");
-        User user = userService.login(username, password);
-        if (user != null) {
-            modelAndView.setViewName("redirect:/user/dashboard");
-            session.setAttribute("user", user);
-        }
+    public ModelAndView loginAction(@RequestParam("username") String username, @RequestParam("password") String password) {
+        var modelAndView = new ModelAndView("/user/login");
         return modelAndView;
     }
 
