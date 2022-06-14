@@ -52,9 +52,8 @@ class ArticleMapperTest {
         article.setContent("爱说大话放噶十八个");
         article.setPublisher(user);
         article.setPublishTime(new Date());
-        article.setCommentAmount(1325L);
-        articleMapper.applyArticle(article);
-        assertEquals(articleMapper.findArticleByUserId(user.getId()).toString(), article.toString());
+        article.setCommentAmount(23523L);
+        article.setPublisher(user);
     }
 
     @Test

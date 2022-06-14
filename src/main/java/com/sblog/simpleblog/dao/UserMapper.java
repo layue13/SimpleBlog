@@ -26,4 +26,6 @@ public interface UserMapper {
 
     List<User> selectByKeyword(String keyword);
 
+    int isExistUser(String username);
+
 }

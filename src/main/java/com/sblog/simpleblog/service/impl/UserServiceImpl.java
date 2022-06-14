@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean register(User user) {
-        return false;
+        return userMapper.apply(user) > 0;
     }
 
     @Override
@@ -37,11 +37,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean update(User user) {
-        return false;
+        return userMapper.modifyUser(user) > 0;
     }
 
     @Override
     public boolean existsByName(String username) {
-        return false;
+        return (userMapper.isExistUser(username) == 1) ? true : false;
     }
 }

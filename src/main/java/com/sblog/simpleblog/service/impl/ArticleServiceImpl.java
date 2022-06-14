@@ -41,16 +41,16 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public boolean update(Article article) {
-        return false;
+        return articleMapper.modifyArticle(article) > 0;
     }
 
     @Override
     public boolean remove(Article article) {
-        return false;
+        return articleMapper.removeArticleById(article.getId()) > 0;
     }
 
     @Override
     public boolean add(Article article) {
-        return false;
+        return articleMapper.applyArticle(article) > 0;
     }
 }

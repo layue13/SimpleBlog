@@ -20,7 +20,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public Comment findById(int commentId) {
-        return null;
+        return commentMapper.findCommentById(commentId);
     }
 
     @Override
@@ -30,6 +30,18 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public boolean add(Comment comment) {
-        return false;
+        return commentMapper.apply(comment) > 0;
     }
+
+    @Override
+    public boolean update(Comment comment) {
+        return commentMapper.modify(comment) > 0;
+    }
+
+    @Override
+    public boolean removeById(int id) {
+        return commentMapper.removeById(id) > 0;
+    }
+
+
 }
