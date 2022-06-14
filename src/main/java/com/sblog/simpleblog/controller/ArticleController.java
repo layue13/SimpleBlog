@@ -4,7 +4,7 @@ import com.sblog.simpleblog.entity.Article;
 import com.sblog.simpleblog.service.ArticleService;
 import com.sblog.simpleblog.service.CommentService;
 import com.sblog.simpleblog.service.UserService;
-import net.sf.jsqlparser.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,9 +18,25 @@ public class ArticleController {
     private ArticleService articleService;
     private UserService userService;
 
+    @Autowired
+    public void setCommentService(CommentService commentService) {
+        this.commentService = commentService;
+    }
+
+    @Autowired
+    public void setArticleService(ArticleService articleService) {
+        this.articleService = articleService;
+    }
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
     @GetMapping("/{id}")
     public ModelAndView articleDetailsView(@PathVariable int id) {
-        ModelAndView modelAndView = new ModelAndView("article/detail");
+        ModelAndView modelAndView = new ModelAndView("/article/detail");
+
         return modelAndView;
     }
 

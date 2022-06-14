@@ -9,7 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.File;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("user")
@@ -52,25 +52,25 @@ public class UserController {
     }
 
     @GetMapping("settings")
-    public ModelAndView settingsView(){
+    public ModelAndView settingsView() {
         ModelAndView modelAndView = new ModelAndView("/user/settings");
         return modelAndView;
     }
 
     @PostMapping("settings")
-    public ModelAndView settingsAction(){
+    public ModelAndView settingsAction() {
         ModelAndView modelAndView = new ModelAndView("/user/settings");
         return modelAndView;
     }
 
     @GetMapping("publish_article")
-    public ModelAndView publishArticleView(){
+    public ModelAndView publishArticleView() {
         ModelAndView modelAndView = new ModelAndView("/user/publish_article");
         return modelAndView;
     }
 
     @PostMapping("publish_article")
-    public ModelAndView publishArticleAction(){
+    public ModelAndView publishArticleAction() {
         ModelAndView modelAndView = new ModelAndView("/user/publish_article");
         return modelAndView;
     }
@@ -80,9 +80,15 @@ public class UserController {
                                     @RequestParam(required = false, name = "startPage", defaultValue = "1") int startPage,
                                     @RequestParam(required = false, name = "pageSize", defaultValue = "10") int pageSize) {
         ModelAndView modelAndView = new ModelAndView("/user/details");
-        User user = userService.findUserById(userId);
+        User user = userService.findById(userId);
         modelAndView.addObject("user", user);
-        modelAndView.addObject("articles", articleService.findArticleByUser(user, startPage, pageSize));
+        modelAndView.addObject("articles", articleService.findByUser(user, startPage, pageSize));
+        return modelAndView;
+    }
+
+    @GetMapping("dashboard")
+    public ModelAndView dashboardView(HttpSession session) {
+        ModelAndView modelAndView = new ModelAndView("/user/dashboard");
         return modelAndView;
     }
 }
