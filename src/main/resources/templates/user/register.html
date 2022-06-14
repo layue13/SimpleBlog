@@ -2,12 +2,89 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>注册</title>
+    <script src="../../static/js/bootstrap.js"></script>
 </head>
 <body>
 <div th:replace="~{fragments/header::head}"></div>
 <div th:replace="~{fragments/nav-bar::nav-bar}"></div>
+<div>
+    <hr/>
+</div>
+<div class="container">
+    <form class="was-validated">
+    <div class="col-md-4 position-relative">
+        <label for="validationTooltip01" class="form-label">昵称</label>
+        <input name="nickname" type="text" class="form-control is-invalid" id="validationTooltip01" required>
 
+    </div>
+    <br/>
+    <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">用户名</label>
+        <input name="name" type="text" class="form-control is-invalid" id="validationTooltip02" required>
+
+    </div>
+    <br/>
+    <div class="col-md-4 position-relative">
+        <label for="validationTooltipUsername" class="form-label">密码</label>
+        <div class="input-group has-validation">
+            <input name="password" type="text" class="form-control is-invalid" id="validationTooltipUsername"
+                   aria-describedby="validationTooltipUsernamePrepend" required>
+
+        </div>
+    </div>
+    <br/>
+    <div class="col-md-6 position-relative">
+        <label for="validationTooltip03" class="form-label">密保问题</label>
+        <input name="passwordQuestion" type="text" class="form-control is-invalid" id="validationTooltip03" required>
+
+    </div>
+    <br/>
+    <div class="col-md-3 position-relative">
+        <label for="validationTooltip05" class="form-label">密保答案</label>
+        <input name="passwordQuestionAnswer" type="text" class="form-control is-invalid" id="validationTooltip05" required>
+
+    </div>
+        <br/>
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+            <label class="form-check-label" for="validationFormCheck1">同意用户协议</label>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <br/>
+            <br/>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">注册</button>
+    </div>
+        </div>
+    </form>
+</div>
+</div>
+
+
+<div>
+    <hr/>
+</div>
 <div th:replace="~{fragments/footer::foot}"></div>
 </body>
 </html>

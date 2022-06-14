@@ -4,16 +4,64 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sblog.simpleblog.dao.ArticleMapper">
 
-    <select id="findAllArticle" resultType="Article">
+    <!--<select id="findAllArticle" resultType="Article">
         select id, title, content, publish_user_id, publish_time, comment_amount
         from simple_blog.tb_article
+    </select>-->
+
+    <select id="findAllArticle" resultMap="ArticleWithUser">
+        select tb_article.id,
+               title,
+               content,
+               publish_user_id,
+               publish_time,
+               comment_amount,
+               tbuser.id as uid,
+               username,
+               nickname,
+               password,
+               pass_question,
+               pass_question_answer
+        from simple_blog.tb_article
+                 left join simple_blog.tb_user tbuser on simple_blog.tb_article.publish_user_id = tbuser.id
     </select>
 
-    <select id="findArticleByUserId" resultType="Article" parameterType="int">
-        select id, title, content, publish_user_id, publish_time, comment_amount
+
+    <select id="findArticleByUserId" resultMap="ArticleWithUser" parameterType="int">
+        select tb_article.id,
+               title,
+               content,
+               publish_user_id,
+               publish_time,
+               comment_amount,
+               tbuser.id as uid,
+               username,
+               nickname,
+               password,
+               pass_question,
+               pass_question_answer
         from simple_blog.tb_article
-        where id = #{id}
+                 left join simple_blog.tb_user tbuser on simple_blog.tb_article.publish_user_id = tbuser.id
+        where tb_article.id like '%${keyword}%'
+           or tbuser.id like '%${keyword}%'
     </select>
+
+    <resultMap id="ArticleWithUser" type="Article">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="publish_user_id" property="publisher.id"/>
+        <result column="publish_time" property="publishTime"/>
+        <result column="comment_amount" property="commentAmount"/>
+        <collection property="publisher" ofType="User">
+            <id column="id" property="id"/>
+            <result column="username" property="name"/>
+            <result column="nickname" property="nickName"/>
+            <result column="password" property="password"/>
+            <result column="pass_question" property="passwordQuestion"/>
+            <result column="pass_question_answer" property="passwordQuestionAnswer"/>
+        </collection>
+    </resultMap>
 
     <insert id="applyArticle" parameterType="Article">
         insert into simple_blog.tb_article (title, content, publish_user_id, publish_time, comment_amount)

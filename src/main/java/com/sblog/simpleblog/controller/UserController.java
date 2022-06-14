@@ -79,7 +79,7 @@ public class UserController {
     public ModelAndView userDetails(@PathVariable("userId") int userId,
                                     @RequestParam(required = false, name = "startPage", defaultValue = "1") int startPage,
                                     @RequestParam(required = false, name = "pageSize", defaultValue = "10") int pageSize) {
-        ModelAndView modelAndView = new ModelAndView("index");
+        ModelAndView modelAndView = new ModelAndView("/user/details");
         User user = userService.findUserById(userId);
         modelAndView.addObject("user", user);
         modelAndView.addObject("articles", articleService.findArticleByUser(user, startPage, pageSize));

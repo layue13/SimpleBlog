@@ -4,16 +4,52 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sblog.simpleblog.dao.BlogInfoMapper">
 
-    <select id="findAllBlogInfo" resultType="BlogInfo">
-        select id, user_id, blog_title, signature
-        from tb_blog_info
+    <select id="findAllBlogInfo" resultMap="BlogInfoMap">
+        select tb_blog_info.id,
+               user_id,
+               blog_title,
+               signature,
+               tbuser.id as uid,
+               username,
+               nickname,
+               password,
+               pass_question,
+               pass_question_answer
+        from simple_blog.tb_blog_info
+                 left join simple_blog.tb_user tbuser on tb_blog_info.user_id = tbuser.id
     </select>
 
-    <select id="findBlogTitleByUserId" resultType="BlogInfo" parameterType="int">
-        select user_id, blog_title, signature
-        from tb_blog_info
-        where id = #{id}
+    <select id="findBlogTitleByUserId" resultMap="BlogInfoMap" parameterType="int">
+        select tb_blog_info.id,
+               user_id,
+               blog_title,
+               signature,
+               tbuser.id as uid,
+               username,
+               nickname,
+               password,
+               pass_question,
+               pass_question_answer
+        from simple_blog.tb_blog_info
+                 left join simple_blog.tb_user tbuser on tb_blog_info.user_id = tbuser.id
+        where tb_blog_info.id like '%${keyword}%'
+           or tbuser.id like '%${keyword}%'
     </select>
+
+    <resultMap id="BlogInfoMap" type="BlogInfo">
+        <id column="id" property="id"/>
+        <result column="user_id" property="user.id"/>
+        <result column="blog_title" property="title"/>
+        <result column="signature" property="signature"/>
+        <association property="user" javaType="User">
+            <id column="id" property="id"/>
+            <result column="username" property="name"/>
+            <result column="nickname" property="nickName"/>
+            <result column="password" property="password"/>
+            <result column="pass_question" property="passwordQuestion"/>
+            <result column="pass_question_answer" property="passwordQuestionAnswer"/>
+        </association>
+    </resultMap>
 
     <insert id="apply" parameterType="BlogInfo">
         insert into tb_blog_info (user_id, blog_title, signature)

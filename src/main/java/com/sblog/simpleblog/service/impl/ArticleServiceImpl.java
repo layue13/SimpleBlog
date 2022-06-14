@@ -33,7 +33,7 @@ public class ArticleServiceImpl implements ArticleService {
     public PageInfo<Article> findAllArticle(int startPage, int pageSize) {
         PageHelper.startPage(startPage, pageSize);
         List<Article> allArticle = articleMapper.findAllArticle();
-        allArticle = allArticle.parallelStream()
+        allArticle = allArticle.stream()
                 .sorted(Comparator.comparing(Article::getPublishTime))
                 .collect(Collectors.toList());
         return new PageInfo<>(allArticle);
