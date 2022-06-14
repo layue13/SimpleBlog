@@ -51,12 +51,38 @@ public class UserController {
         return modelAndView;
     }
 
+    @GetMapping("settings")
+    public ModelAndView settingsView(){
+        ModelAndView modelAndView = new ModelAndView("/user/settings");
+        return modelAndView;
+    }
+
+    @PostMapping("settings")
+    public ModelAndView settingsAction(){
+        ModelAndView modelAndView = new ModelAndView("/user/settings");
+        return modelAndView;
+    }
+
+    @GetMapping("publish_article")
+    public ModelAndView publishArticleView(){
+        ModelAndView modelAndView = new ModelAndView("/user/publish_article");
+        return modelAndView;
+    }
+
+    @PostMapping("publish_article")
+    public ModelAndView publishArticleAction(){
+        ModelAndView modelAndView = new ModelAndView("/user/publish_article");
+        return modelAndView;
+    }
+
     @GetMapping("/{userId}")
-    public ModelAndView userMainPage(@PathVariable("userId") int userId,
-                                     @RequestParam(required = false, name = "startPage", defaultValue = "1") int startPage,
-                                     @RequestParam(required = false, name = "pageSize", defaultValue = "10") int pageSize) {
-        var modelAndView = new ModelAndView("index");
-        modelAndView.addObject("articles", articleService.findArticleByUser(userService.findUserById(userId), startPage,pageSize));
+    public ModelAndView userDetails(@PathVariable("userId") int userId,
+                                    @RequestParam(required = false, name = "startPage", defaultValue = "1") int startPage,
+                                    @RequestParam(required = false, name = "pageSize", defaultValue = "10") int pageSize) {
+        ModelAndView modelAndView = new ModelAndView("index");
+        User user = userService.findUserById(userId);
+        modelAndView.addObject("user", user);
+        modelAndView.addObject("articles", articleService.findArticleByUser(user, startPage, pageSize));
         return modelAndView;
     }
 }
