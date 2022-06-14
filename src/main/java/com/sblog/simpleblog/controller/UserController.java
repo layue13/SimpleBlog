@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("user")
-@SessionAttributes("user")
 public class UserController {
     private UserService userService;
     private ArticleService articleService;
@@ -99,5 +98,11 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView("/user/dashboard");
         modelAndView.addObject("user", session.getAttribute("user"));
         return modelAndView;
+    }
+
+    @GetMapping("logout")
+    public ModelAndView logout(@Autowired HttpSession session){
+        session.setAttribute("user",null);
+        return new ModelAndView("redirect:/index");
     }
 }

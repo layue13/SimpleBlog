@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("article")
-@SessionAttributes("user")
 public class ArticleController {
     private CommentService commentService;
     private ArticleService articleService;

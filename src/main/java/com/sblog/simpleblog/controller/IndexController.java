@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@SessionAttributes("user")
 public class IndexController {
     private ArticleService articleService;
 
@@ -18,8 +17,9 @@ public class IndexController {
         this.articleService = articleService;
     }
 
-    @GetMapping("/index")
-    public ModelAndView indexView(@RequestParam(name="startPage",defaultValue = "1",required = false) int startPage,@RequestParam(name="pageSize",defaultValue = "12",required = false) int pageSize){
+    @GetMapping({"/index","/"})
+    public ModelAndView indexView(@RequestParam(name="startPage",defaultValue = "1",required = false) int startPage,
+                                  @RequestParam(name="pageSize",defaultValue = "12",required = false) int pageSize){
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("articleList",articleService.findAll(startPage, pageSize));
         return modelAndView;
