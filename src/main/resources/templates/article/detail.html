@@ -12,12 +12,12 @@
 </div>
 <div class="container">
 
-    <!--/*@thymesVar id="user" type="com.sblog.simpleblog.entity.User"*/-->
-    <!--/*@thymesVar id="id" type="com.sblog.simpleblog.entity.User.id"*/-->
-    <div th:text="${user.name}"></div>
-    <div th:text="${user.nickName}"></div>
-    <!--/*@thymesVar id="articles" type="com.sblog.simpleblog.entity.Article"*/-->
-    <div th:each="article:${articles.list}">
+<!--    &lt;!&ndash;/*@thymesVar id="user" type="com.sblog.simpleblog.entity.User"*/&ndash;&gt;-->
+<!--    &lt;!&ndash;/*@thymesVar id="id" type="com.sblog.simpleblog.entity.User.id"*/&ndash;&gt;-->
+<!--    <div th:text="${user.name}"></div>-->
+<!--    <div th:text="${user.nickName}"></div>-->
+    <!--/*@thymesVar id="article" type="com.sblog.simpleblog.entity.Article"*/-->
+    <div th:each="${article.list}">
         <div style="font-size: 20px; color: cornflowerblue " th:text="${article.title}"></div>
         <br>
         <div style="border-color: cyan;border:2px solid" th:text="${article.content}"></div>
