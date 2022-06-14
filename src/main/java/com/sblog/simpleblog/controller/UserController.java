@@ -34,7 +34,9 @@ public class UserController {
     }
 
     @PostMapping("login")
-    public ModelAndView loginAction(@RequestParam("username") String username, @RequestParam("password") String password, @Autowired HttpSession session) {
+    public ModelAndView loginAction(@RequestParam("username") String username,
+                                    @RequestParam("password") String password,
+                                    @Autowired HttpSession session) {
         var modelAndView = new ModelAndView("/user/login");
         User user = userService.login(username, password);
         if (user != null) {
