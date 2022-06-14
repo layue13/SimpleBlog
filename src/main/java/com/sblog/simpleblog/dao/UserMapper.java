@@ -16,11 +16,11 @@ public interface UserMapper {
 
     User findUserByName(String username);
 
-    int insert(User user);
+    int apply(User user);
 
-    int updateUser(User user);
+    int modifyUser(User user);
 
-    int deleteUserById(int id);
+    int removeUserById(int id);
 
 
 }

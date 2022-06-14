@@ -16,10 +16,10 @@ public interface ArticleMapper {
 
 //    List<Article> findArticleByTimeRange(Date startTime, Date endTime);
 
-    int insert(Article article);
+    int applyArticle(Article article);
 
-    int updateArticle(Article article);
+    int modifyArticle(Article article);
 
-    int deleteArticleById(String Id);
+    int removeArticleById(int Id);
 
 }

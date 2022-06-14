@@ -12,11 +12,10 @@ public interface ArticleHitMapper {
 
     List<ArticleHit> findAllArticle();
 
-    int insert(ArticleHit articleHit);
+    int apply(ArticleHit articleHit);
 
-    int update(ArticleHit articleHit);
+    int modify(ArticleHit articleHit);
 
-    int deleteById(int id);
-
+    int removeById(int id);
 
 }
