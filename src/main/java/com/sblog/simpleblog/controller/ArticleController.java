@@ -2,6 +2,7 @@ package com.sblog.simpleblog.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.sblog.simpleblog.entity.Article;
+import com.sblog.simpleblog.entity.Comment;
 import com.sblog.simpleblog.entity.User;
 import com.sblog.simpleblog.service.ArticleService;
 import com.sblog.simpleblog.service.CommentService;
@@ -41,7 +42,9 @@ public class ArticleController {
                                            @RequestParam(defaultValue = "12", required = false) int pageSize) {
         ModelAndView modelAndView = new ModelAndView("/article/detail");
         Article article = articleService.findById(id);
-        commentService.findByArticle(article, startPage, pageSize);
+        PageInfo<Comment> commentPageInfo = commentService.findByArticle(article, startPage, pageSize);
+        modelAndView.addObject("article", article);
+        modelAndView.addObject("commentPageInfo", commentPageInfo);
         return modelAndView;
     }
 
@@ -52,7 +55,6 @@ public class ArticleController {
         ModelAndView modelAndView = new ModelAndView("/article/list");
         User user = (User) session.getAttribute("user");
         PageInfo<Article> articlePageInfo = articleService.findByUser(user, startPage, pageSize);
-        modelAndView.addObject("user", user);
         modelAndView.addObject("articlePageInfo", articlePageInfo);
         return modelAndView;
     }
@@ -76,13 +78,14 @@ public class ArticleController {
         if (!article.getPublisher().getId().equals(user.getId())) {
             modelAndView.setViewName("redirect:/article/list");
         }
-        modelAndView.addObject("user", user);
         modelAndView.addObject("article", article);
         return modelAndView;
     }
 
     @PostMapping("update")
     public ModelAndView updateArticleAction(Article article, @Autowired HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        article.setPublisher(user);
         return new ModelAndView("redirect:/article/list");
     }
 
