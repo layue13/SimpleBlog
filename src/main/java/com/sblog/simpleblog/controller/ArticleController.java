@@ -71,7 +71,8 @@ public class ArticleController {
     }
 
     @GetMapping("update")
-    public ModelAndView updateArticleView(@RequestParam(name = "id") int id, @Autowired HttpSession session) {
+    public ModelAndView updateArticleView(@RequestParam(name = "id") int id,
+                                          @Autowired HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("/article/update");
         User user = (User) session.getAttribute("user");
         Article article = articleService.findById(id);
