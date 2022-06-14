@@ -52,7 +52,6 @@ public class ArticleController {
         ModelAndView modelAndView = new ModelAndView("/article/list");
         User user = (User) session.getAttribute("user");
         PageInfo<Article> articlePageInfo = articleService.findByUser(user, startPage, pageSize);
-        modelAndView.addObject("user", user);
         modelAndView.addObject("articlePageInfo", articlePageInfo);
         return modelAndView;
     }
@@ -76,13 +75,14 @@ public class ArticleController {
         if (!article.getPublisher().getId().equals(user.getId())) {
             modelAndView.setViewName("redirect:/article/list");
         }
-        modelAndView.addObject("user", user);
         modelAndView.addObject("article", article);
         return modelAndView;
     }
 
     @PostMapping("update")
     public ModelAndView updateArticleAction(Article article, @Autowired HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        article.setPublisher(user);
         return new ModelAndView("redirect:/article/list");
     }
 
