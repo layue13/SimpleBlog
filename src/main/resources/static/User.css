@@ -1,0 +1,392 @@
+#Top {
+    text-align: center;
+    background-color: #fff;
+    height: 44px;
+    font-size: 15px;
+    font-weight: 500;
+    background-size: 44px 44px;
+    border-bottom: 1px solid rgba(0,0,0,.22);
+    padding: 0 20px;
+}
+#Top>.content {
+    max-width: 1060px;
+}
+
+#Logo {
+    width: 94px;
+    height: 30px;
+    background-image: url(../static/img/SBlog.png);
+    background-size: 94px 30px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.content {
+    min-width: 600px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.site-nav {
+    padding-top: 6px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#search-container {
+    width: 246px;
+    height: 24px;
+    padding-left: 30px;
+    transition: all .15s;
+    border-radius: 15px;
+    position: relative;
+    margin: 0 0 2px 10px;
+}
+.site-nav .tools {
+    flex: 1 1 200px;
+    text-align: right;
+}
+a:active, a:link, a:visited {
+    color: #778087;
+    text-decoration: none;
+    word-break: break-word;
+}
+.site-nav #Logo {
+    width: 100px;
+}
+input {
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+#search-container #search-result {
+    display: none;
+    position: absolute;
+    background-color:#ffffff;
+    top: 36px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+div {
+    display: block;
+}
+
+#Bottom {
+    border-top: 1px solid rgba(0,0,0,.22);
+    background-color: var(--box-background-color);
+    text-align: center;
+    color: var(--color-gray);
+    padding-top: 0;
+    padding-right: calc(var(--box-padding) + env(safe-area-inset-right));
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: calc(var(--box-padding) + env(safe-area-inset-left));
+}
+:root {
+    --code-font: "Consolas","Panic Sans","Bitstream Vera Sans Mono","Menlo","Microsoft Yahei",monospace;
+    --box-background-color: #fff;
+    --box-background-alt-color: #f9f9f9;
+    --box-background-hover-color: #fafafa;
+    --box-foreground-color: #000;
+    --box-border-color: #e2e2e2;
+    --box-border-hover-color: #c0c0c0;
+    --box-border-focus-color: #a6a6b0;
+    --box-border-radius: 3px;
+    --box-padding: 10px;
+    --box-font-size: 14px;
+    --box-line-height: 120%;
+    --button-background-color: #f0f0f0;
+    --button-background-hover-color: #e0e0e0;
+    --button-foreground-color: #666;
+    --button-foreground-hover-color: #333;
+    --button-border-color: #ddd;
+    --button-border-hover-color: #c0c0c0;
+    --menu-shadow-color: rgba(0, 0, 0, 0.2);
+    --ads-list-foreground-color: #445;
+    --component-margin: 20px;
+    --link-color: #778087;
+    --link-visited-color: #afb9c1;
+    --link-hover-color: #4d5256;
+    --color-foreground: #000;
+    --color-gray: #999;
+    --color-fade: #ccc;
+}
+div {
+    display: block;
+}
+body {
+    min-width: 820px;
+    font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+}
+.content {
+    min-width: 600px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.inner {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: left;
+}
+.sep10 {
+    height: 10px;
+}
+.fr {
+    float: right;
+    text-align: right;
+}
+a:active, a:link, a:visited {
+    color: var(--link-color);
+    text-decoration: none;
+    word-break: break-word;
+}
+a:-webkit-any-link {
+    cursor: pointer;
+}
+a.dark:active, a.dark:link, a.dark:visited {
+    color: gray;
+    text-decoration: none;
+}
+.snow {
+    color: #e2e2e2;
+}
+.fade {
+    color: var(--color-fade);
+}
+.f11 {
+    font-size: 11px;
+}
+.sep20 {
+    height: 20px;
+}
+.sep5 {
+    height: 5px;
+}
+.small {
+    font-size: 12px;
+}
+
+#Wrapper {
+    padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
+    text-align: center;
+    background-color: #e2e2e2;
+    background-image: url(../static/img/shadow_light.png);
+    background-repeat: repeat-x;
+}
+
+.content {
+    min-width: 600px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#Leftbar {
+    width: 0;
+    float: left;
+}
+
+#Rightbar {
+    width: 270px;
+    float: right;
+    margin-right: 20px;
+}
+
+.sep20 {
+    height: 20px;
+}
+
+#Main {
+    width: auto;
+    margin: 0 310px 0 20px;
+}
+
+.box {
+    background-color: #ffffff;
+    border-radius:3px;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.c {
+    clear: both;
+}
+.header {
+    padding: 10px;
+    font-size: 15px;
+    line-height: 120%;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+    overflow: auto;
+}
+
+.cell {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: left;
+    border-bottom: 1px solid var(--box-border-color);
+}
+
+.topic_content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000000;
+    word-break: break-word;
+}
+
+.dock_area {
+    background-color: #edf3f5;
+    background-image: url(../static/img/dock_shadow.png);
+    background-repeat: repeat-x;
+    padding: 0;
+}
+
+.signup_methods {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 15px;
+}
+
+.signup_method {
+    transition: box-shadow .4s ease,background-color .4s ease,color .4s ease;
+    text-decoration: none;
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 52px;
+    min-width: 210px;
+    line-height: 100%;
+    display: flex;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.signup_method_google {
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+}
+
+.signup_method_label {
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 0.8em;
+    color: #000;
+}
+
+.header {
+    padding: 10px;
+    font-size: 15px;
+    line-height: 120%;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+    overflow: auto;
+}
+
+.message {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: left;
+    background-color: #f3faff;
+    border-left: 5px solid #c7e8ff;
+    border-bottom: 1px solid #e2e2e2;
+    color: #333;
+    cursor: pointer;
+}
+
+.cell {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+table[Attributes Style] {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    width: 100%;
+}
+
+#search-container {
+    width: 246px;
+    height: 24px;
+    padding-left: 30px;
+    background-color: #fafafa;
+    transition: all .15s;
+    border: 1px #fafafa solid;
+    border-radius: 15px;
+    position: relative;
+    margin: 0 0 2px 10px;
+}
+
+#search-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 26px;
+    height: 100%;
+    transition: filter .15s;
+    background-image: url(../static/img/search_icon_light.png);
+    background-color: transparent;
+    background-size: 17px 17px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: opacity(40%);
+}
+
+#search-container #search {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 1px;
+    border: 0;
+    font-family: helvetica neue,luxi sans,Tahoma,hiragino sans gb,STHeiti,sans-serif;
+    background-color: transparent;
+    border: none;
+}
+
+
+
