@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/QA.css">
+    <link rel="stylesheet" href="../static/settings.css">
+    <link rel="stylesheet" href="../static/User.css">
+
+</head>
+<body>
+<div id="Top">
+    <div class="content">
+        <div class="site-nav">
+            <a href="https://www.v2ex.com/" name="top" title="way to explore"><div id="Logo"></div></a>
+            <div id="search-container">
+                <input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+                <div id="search-result" class="box"></div>
+            </div>
+            <div class="tools">
+                <a href="index.html" class="top">首页</a>
+
+                <a href="settings.html" class="top">设置</a>
+                <a href="index.html" onclick="if (confirm(&#39;确定要从 V2EX 登出？&#39;)) { location.href= &#39;/signout?once=95913&#39;; }" class="top">登出</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="Wrapper">
+    <div class="content">
+        <div id="Leftbar"></div>
+        <div id="Rightbar">
+            <div class="sep20"></div>
+            <div class="box">
+                <div class="cell">
+                    <strong>V2EX = way to explore</strong>
+                    <div class="sep5"></div>
+                    <span class="fade">V2EX 是一个关于分享和探索的地方</span>
+                </div>
+                <div class="inner">
+                    <div class="sep5"></div>
+                    <div align="center"><a href="../register.html" class="super normal button">现在注册</a>
+                        <div class="sep5"></div>
+                        <div class="sep10"></div>
+                        已注册用户请 &nbsp;<a href="../login.html">登录</a></div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="Main">
+            <div class="sep20"></div>
+            <div class="box" style="border-bottom: 0px;">
+                <div class="header">
+                    <div class="fr"><a href="/member/dfgxcvbcv"><img
+                            src="https://cdn.v2ex.com/gravatar/582b3e2b8eb1c19e14d3f53fe4db7dac?s=73&amp;d=retro"
+                            class="avatar" border="0" align="default" alt="dfgxcvbcv"></a></div>
+                    <a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> <a href="/go/cloud">云计算</a>
+                    <div class="sep10"></div>
+                    <h1>有什么 NAS 自建网盘的程序能做到端对端加密？</h1>
+                    <small class="gray">
+                        <a href="/member/dfgxcvbcv">dfgxcvbcv</a>
+                        · <span title="2022-06-12 21:38:00 +08:00">
+                        11 小时 8 分钟前</span> · 840 次点击</small>
+                </div>
+
+                <div class="cell">
+                    <div class="topic_content">
+                        <div class="markdown_body">
+                            <p>nextcloud 官网说可以，但我研究了很久还是没找到这功能在哪里。</p>
+                            <p>seafile 确实可以，但这东西 bug 太多了。</p>
+                            <p>桌面版能设置 128 位密码，iOS 客户端解密的时候密码输入框只允许输入 127 位。
+                                服务端有的时候启动会非常慢，CPU 占用很低但要几分钟才能启动。
+                                部分英文界面排版错位。</p>
+                            <p>这么多 bug 的程序担心以后会丢我数据，不敢用。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sep20"></div>
+            <div class="box">
+                <div class="cell"
+                >
+                    <div class="fr" style="margin: -3px -5px 0px 0px;">
+                        <a href="/tag/bug" class="tag">
+                            <li class="fa fa-tag"></li>
+                            bug</a>
+                        <a href="/tag/密码" class="tag">
+                            <li class="fa fa-tag"></li>
+                            密码</a>
+                        <a href="/tag/Seafile" class="tag">
+                            <li class="fa fa-tag"></li>
+                            Seafile</a><a href="/tag/输入" class="tag">
+                        <li class="fa fa-tag"></li>
+                        输入</a></div>
+                    <span class="gray">14 条回复 &nbsp;<strong class="snow">•</strong> &nbsp;2022-06-13 08:16:53 +08:00</span>
+                </div>
+                <div id="r_11761371" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/gravatar/91c2088e234cc4c47a2b896116bd31bd?s=48&amp;d=retro"
+                                    class="avatar" border="0" align="default" alt="Donahue"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">1</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/Donahue" class="dark">Donahue</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-12 22:33:54 +08:00">10 小时 12 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">不懂就问, 应该设置好 https 的都可以吧? https 属于端到端加密吗</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761402" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/gravatar/582b3e2b8eb1c19e14d3f53fe4db7dac?s=48&amp;d=retro"
+                                    class="avatar" border="0" align="default" alt="dfgxcvbcv"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">2</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/dfgxcvbcv" class="dark">dfgxcvbcv</a></strong> &nbsp;
+                                <div class="badges">
+                                    <div class="badge op">OP</div>
+                                </div>&nbsp; &nbsp;<span class="ago" title="2022-06-12 22:48:17 +08:00">9 小时 58 分钟前 via iPhone</span>
+                                &nbsp; <span class="small fade"><img
+                                    width="14" align="absmiddle"> </span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">@<a href="/member/Donahue">Donahue</a> #1 当然不算，https 只是
+                                    NAS 到客户端之间通信是加密的，在 NAS 上存储的还是明文，E2EE 要求的是在 NAS 上存储的也是密文。我想防的是有人偷硬盘来读数据
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761422" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/avatar/439a/4b80/99401_normal.png?m=1440596455"
+                                    class="avatar" border="0" align="default" alt="Menci"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">3</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/Menci" class="dark">Menci</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-12 22:56:33 +08:00">9 小时 50 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">我印象里新版 Nextcloud 的端到端加密功能叫 per-user encryption</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761451" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/avatar/9c3f/66a1/473786_normal.png?m=1646007970"
+                                    class="avatar" border="0" align="default" alt="cpstar"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">4</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/cpstar" class="dark">cpstar</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-12 23:08:16 +08:00">9 小时 38 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">居然能把 seafile 用出问题，可真行。从他的 1.x 版用到现在，office online
+                                    都给整出来过，还抵抗了勒索蠕虫的攻击一键还原，反正没见过比他还好用的东西了。
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761453" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/gravatar/cf157d4e0869f265a483a175fd328228?s=48&amp;d=retro"
+                                    class="avatar" border="0" align="default" alt="kennir"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">5</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/kennir" class="dark">kennir</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-12 23:09:09 +08:00">9 小时 37 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">seafile 很快，bug 确实多了点，今天测试的时候出来好多次内部服务器错误<br>nextcloud
+                                    在测试过程中也不停的各种出错<br><br>看来只有黑群晖了
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761471" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/avatar/f395/778f/242448_normal.png?m=1649939361"
+                                    class="avatar" border="0" align="default" alt="Vneix"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">6</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/Vneix" class="dark">Vneix</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-12 23:13:46 +08:00">9 小时 32 分钟前 via Android</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">以前用过 nextcloud 的端到端加密功能，不知道现在有没有变化。<br><br>用起来还是挺麻烦的，比如加密需要消耗额外的性能资源，要想读取端到端加密的文件需要使用官方的客户端，加密文件在网页端无法查看，加密后的文件体积会变大很多等。<br><br>具体使用方法搜一下应该是有的。
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761577" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/gravatar/818fa3f62aa695ca880dac094a3d2bf3?s=48&amp;d=retro"
+                                    class="avatar" border="0" align="default" alt="fisherwei"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">7</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/fisherwei" class="dark">fisherwei</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-13 00:01:07 +08:00">8 小时 45 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">@<a href="/member/dfgxcvbcv">dfgxcvbcv</a>
+                                    随便用什么网盘，底层用带加密的 zfs 算吗？
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761585" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/gravatar/582b3e2b8eb1c19e14d3f53fe4db7dac?s=48&amp;d=retro"
+                                    class="avatar" border="0" align="default" alt="dfgxcvbcv"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">8</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/dfgxcvbcv" class="dark">dfgxcvbcv</a></strong> &nbsp;
+                                <div class="badges">
+                                    <div class="badge op">OP</div>
+                                </div>&nbsp; &nbsp;<span class="ago"
+                                                         title="2022-06-13 00:03:58 +08:00">8 小时 42 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">@<a href="/member/fisherwei">fisherwei</a> #7 zfs
+                                    是在服务器解密，不算
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761614" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/gravatar/ce158dc5cd70d96913d8f9ab1e92d73d?s=48&amp;d=retro"
+                                    class="avatar" border="0" align="default" alt="ltkun"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">9</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/ltkun" class="dark">ltkun</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-13 00:19:05 +08:00">8 小时 27 分钟前 via Android</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">@<a href="/member/dfgxcvbcv">dfgxcvbcv</a> 直接硬盘加密不就得了
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761621" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/gravatar/aaa04c58b2ee20740098a1b72d186b2a?s=48&amp;d=retro"
+                                    class="avatar" border="0" align="default" alt="justNoBody"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">10</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/justNoBody" class="dark">justNoBody</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-13 00:22:36 +08:00">8 小时 24 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">要不考虑买台 mac ，然后用 mac 运行一个网盘程序，mac
+                                    硬盘自带芯片级加密，应该能解决硬盘被偷的问题吧？
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761759" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/avatar/8938/bf08/567236_normal.png?m=1641863804"
+                                    class="avatar" border="0" align="default" alt="yaoyao1128"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">11</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/yaoyao1128" class="dark">yaoyao1128</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-13 03:11:48 +08:00">5 小时 34 分钟前 via iPhone</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">@<a href="/member/cpstar">cpstar</a>
+                                    seafile……不知道现在但是最开始的时候的确我是因为 bug 放弃的……
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761769" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/avatar/c873/8947/186969_normal.png?m=1471204591"
+                                    class="avatar" border="0" align="default" alt="billytom"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">12</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/billytom" class="dark">billytom</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-13 03:28:04 +08:00">5 小时 18 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">nextcloud 是可以设置端对端加密的，就是设置了这个后，很多东西都变得不正常。。。</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761796" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/gravatar/55ce9e1690e987ce8b8e575929b7fc79?s=48&amp;d=retro"
+                                    class="avatar" border="0" align="default" alt="wizardyhnr"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">13</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/wizardyhnr" class="dark">wizardyhnr</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-13 04:51:18 +08:00">3 小时 55 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">resilio sync</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="r_11761884" class="cell">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td width="48" valign="top" align="center"><img
+                                    src="https://cdn.v2ex.com/avatar/57fb/ae44/96660_normal.png?m=1423513567"
+                                    class="avatar" border="0" align="default" alt="cnt2ex"></td>
+                            <td width="10" valign="top"></td>
+                            <td width="auto" valign="top" align="left">
+                                <div class="fr"> &nbsp; &nbsp; <span class="no">14</span></div>
+                                <div class="sep3"></div>
+                                <strong><a href="/member/cnt2ex" class="dark">cnt2ex</a></strong> &nbsp;
+                                <div class="badges"></div>&nbsp; &nbsp;<span class="ago"
+                                                                             title="2022-06-13 08:16:53 +08:00">29 分钟前</span>
+                                <div class="sep5"></div>
+                                <div class="reply_content">nextcloud 有个 server side encryption
+                                    ，虽然不是端到端的，但是存在盘上的数据是加密的。<br><br>如果把存放 key 和存放 data 的目录分开放不同盘上，可以防止 data 盘的数据被读取。
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <style type="text/css">.wwads-cn {
+                border-radius: 3px !important;
+            }
+
+            .wwads-text {
+                color: var(--link-color) !important;
+            }</style>
+        </div>
+    </div>
+    <div class="c"></div>
+    <div class="sep20"></div>
+    </div>
+
+
+
+
+<div id="Bottom">
+    <div class="content">
+        <div class="inner">
+            <div class="sep10"></div>
+            <div class="fr">
+                <a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+            </div>
+            <strong><a href="https://www.v2ex.com/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/advertise" class="dark" target="_self">广告投放</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/advertise/2019.html" class="dark" target="_self">感谢</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2572 人在线</strong> &nbsp; <span class="fade">最高记录 5497</span> &nbsp; <span class="snow">·</span> &nbsp;
+            <div class="sep20"></div>
+            创意工作者们的社区
+            <div class="sep5"></div>
+            World is powered by solitude
+            <div class="sep20"></div>
+            <span class="small fade">VERSION: 3.9.8.5 · 13ms · <a href="https://www.v2ex.com/worldclock#utc">UTC 11:50</a> · <a href="https://www.v2ex.com/worldclock#pvg">PVG 19:50</a> · <a href="https://www.v2ex.com/worldclock#lax">LAX 04:50</a> · <a href="https://www.v2ex.com/worldclock#jfk">JFK 07:50</a><br>Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br>♥ Do have faith in what you're doing.</span>
+            <div class="sep10"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
