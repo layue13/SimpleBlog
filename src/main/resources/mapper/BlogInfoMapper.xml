@@ -36,6 +36,12 @@
            or tbuser.id like '%${keyword}%'
     </select>
 
+    <select id="isExistInfo" resultType="int" parameterType="User">
+        SELECT 1
+        FROM tb_user
+        WHERE id = #{id} LIMIT 1
+    </select>
+
     <resultMap id="BlogInfoMap" type="BlogInfo">
         <id column="id" property="id"/>
         <result column="user_id" property="user.id"/>

@@ -7,7 +7,11 @@ import com.sblog.simpleblog.entity.Comment;
 public interface CommentService {
      Comment findById(int commentId);
 
-     PageInfo<Comment> findByArticle(Article article,int startPage,int pageSize);
+     PageInfo<Comment> findByArticle(Article article, int startPage, int pageSize);
 
      boolean add(Comment comment);
+
+     boolean update(Comment comment);
+
+     boolean removeById(int id);
 }

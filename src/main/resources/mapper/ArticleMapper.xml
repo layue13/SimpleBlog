@@ -45,6 +45,12 @@
         where tbuser.id = #{id}
     </select>
 
+    <select id="isHaveUser" resultType="int" parameterType="Article">
+        SELECT 1
+        FROM tb_user
+        WHERE title = #{title} LIMIT 1
+    </select>
+
     <resultMap id="ArticleWithUser" type="Article">
         <id column="id" property="id"/>
         <result column="title" property="title"/>
