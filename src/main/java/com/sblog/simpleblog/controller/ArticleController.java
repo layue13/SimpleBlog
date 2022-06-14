@@ -36,8 +36,8 @@ public class ArticleController {
         this.userService = userService;
     }
 
-    @GetMapping("/{id}")
-    public ModelAndView articleDetailsView(@PathVariable int id,
+    @GetMapping("/detail")
+    public ModelAndView articleDetailsView(int id,
                                            @RequestParam(defaultValue = "1", required = false) int startPage,
                                            @RequestParam(defaultValue = "12", required = false) int pageSize) {
         ModelAndView modelAndView = new ModelAndView("/article/detail");

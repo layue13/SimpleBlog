@@ -70,18 +70,6 @@ public class UserController {
         return modelAndView;
     }
 
-    @GetMapping("publish_article")
-    public ModelAndView publishArticleView() {
-        ModelAndView modelAndView = new ModelAndView("/user/publish_article");
-        return modelAndView;
-    }
-
-    @PostMapping("publish_article")
-    public ModelAndView publishArticleAction() {
-        ModelAndView modelAndView = new ModelAndView("/user/publish_article");
-        return modelAndView;
-    }
-
     @GetMapping("/{userId}")
     public ModelAndView userDetails(@PathVariable("userId") int userId,
                                     @RequestParam(required = false, name = "startPage", defaultValue = "1") int startPage,

@@ -26,7 +26,7 @@
     </nav>
 <ul class="list-group">
     <li class="list-group-item" th:each="article:${articleList.list}">
-        <a th:href="@{/article/detail}"><div th:text="${article.title}"></div></a>
+        <a th:href="@{/article/detail(id=${article.id})}"><div th:text="${article.title}"></div></a>
         <div th:text="${article.publisher.nickName}"></div>
         <div th:text="${article.publishTime}"></div>
     </li>
