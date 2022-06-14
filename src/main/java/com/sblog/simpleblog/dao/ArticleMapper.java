@@ -24,4 +24,6 @@ public interface ArticleMapper {
 
     int removeArticleById(int Id);
 
+    int isExistArticle(Article article);
+
 }
