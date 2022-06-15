@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 @Controller
 @RequestMapping("article")
@@ -99,6 +100,7 @@ public class ArticleController {
     public ModelAndView addArticleAction(Article article, HttpSession session) {
         User user = (User) session.getAttribute("user");
         article.setPublisher(user);
+        article.setPublishTime(new Date());
         articleService.add(article);
         return new ModelAndView("redirect:/article/list");
     }
