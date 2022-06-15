@@ -57,7 +57,7 @@ public class UserController {
         var modelAndView = new ModelAndView("/user/register");
         if(!userService.existsByName(user.getName())){
             userService.register(user);
-            modelAndView.setViewName("/user/login");
+            modelAndView.setViewName("redirect:/user/login");
         }
         return modelAndView;
     }
