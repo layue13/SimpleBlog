@@ -13,26 +13,21 @@
 
 <div class="container">
     <div th:replace="~{fragments/user/left-bar::left-bar}"></div>
-    <form>
+    <form action="/user/settings" method="post">
+        <input type="hidden" name="id" th:value="${session.user.id}">
+        <input type="hidden" name="nickName" th:value="${session.user.nickName}">
+        <input type="hidden" name="passwordQuestion" th:value="${session.user.passwordQuestion}">
+        <input type="hidden" name="passwordQuestionAnswer" th:value="${session.user.passwordQuestionAnswer}">
         <div>
             <label>修改昵称</label>
-            <input>
-        </div>
-        <br/>
-        <div>
-            <label>原密码&nbsp;&nbsp;&nbsp;</label>
-            <input>
+            <input name="name" th:value="${session.user.name}">
         </div>
         <br/>
         <div>
             <label>修改密码</label>
-            <input>
+            <input name="password" th:value="${session.user.password}">
         </div>
         <br/>
-        <div>
-            <label>确认密码</label>
-            <input>
-        </div>
         <br/>
         <div>
             <button class="btn btn-primary" type="submit">修改</button>

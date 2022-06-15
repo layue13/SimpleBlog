@@ -55,6 +55,10 @@ public class UserController {
     @PostMapping("register")
     public ModelAndView registerAction(@Validated User user) {
         var modelAndView = new ModelAndView("/user/register");
+        if(!userService.existsByName(user.getName())){
+            userService.register(user);
+            modelAndView.setViewName("/user/login");
+        }
         return modelAndView;
     }
 
@@ -65,8 +69,13 @@ public class UserController {
     }
 
     @PostMapping("settings")
-    public ModelAndView settingsAction() {
+    public ModelAndView settingsAction(User user, @Autowired HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("/user/settings");
+        User originUser = (User) session.getAttribute("user");
+        if (user.getId().equals(originUser.getId())) {
+            userService.update(user);
+            session.setAttribute("user",user);
+        }
         return modelAndView;
     }
 
@@ -89,8 +98,8 @@ public class UserController {
     }
 
     @GetMapping("logout")
-    public ModelAndView logout(@Autowired HttpSession session){
-        session.setAttribute("user",null);
+    public ModelAndView logout(@Autowired HttpSession session) {
+        session.setAttribute("user", null);
         return new ModelAndView("redirect:/index");
     }
 }

@@ -18,7 +18,7 @@
     <select id="findUserByName" resultMap="UserMap">
         select id, username, nickname, password, pass_question, pass_question_answer
         from tb_user
-        where username = #{username}
+        where username = #{name}
     </select>
 
     <select id="isExistUser" parameterType="User" resultType="int">
@@ -44,7 +44,8 @@
     <update id="modifyUser" parameterType="User">
         update tb_user
         set username = #{name},
-            nickname = #{nickName}
+            nickname = #{nickName},
+            password = #{password}
         where id = #{id}
     </update>
 
