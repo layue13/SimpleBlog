@@ -103,7 +103,7 @@
     <delete id="removeArticleById" parameterType="int">
         delete
         from simple_blog.tb_article
-        where id = #{id}
+        where id = ${id}
     </delete>
 
 </mapper> 

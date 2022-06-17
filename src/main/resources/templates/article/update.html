@@ -12,31 +12,32 @@
 </div>
 
 <div class="container">
-    <div >
-    <div  th:replace="~{fragments/user/left-bar::left-bar}"></div>
+    <div>
+        <div th:replace="~{fragments/user/left-bar::left-bar}"></div>
 
-    <h4 class="page-title">信息更改</h4>
-    <div class="mb-3">
-        <label>更改标题</label>
-        <br>
-        <input>
-        <br>
-        <label for="exampleFormControlTextarea1" class="form-label">更改内容</label>
-        <br>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <br>
-        <label>更改发布时间</label>
-        <br>
-        <input>
-        <br>
+        <h4 class="page-title">文章更新</h4>
+        <form action="/article/update" method="post">
+            <div class="mb-3">
+                <input type="hidden" name="commentAmount" th:value="${article.commentAmount}"/>
+                <input type="hidden" name="id" th:value="${article.id}"/>
+                <input type="hidden" name="publishTime" th:value="${article.publishTime}"/>
 
+                <label>文章标题</label>
+                <br>
+                <input name="title" type="text" th:value="${article.title}">
+                <br>
+                <label for="exampleFormControlTextarea1" class="form-label">文章内容</label>
+                <br>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"
+                          th:text="${article.content}"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">确定</button>
+        </form>
+
+        <div>
+            <br/>
+        </div>
     </div>
-    <button type="button" class="btn btn-primary">更新</button>
-
-
-<div>
-    <br/>
-</div>
-<div th:replace="~{fragments/footer::foot}"></div>
+    <div th:replace="~{fragments/footer::foot}"></div>
 </body>
 </html>

@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.sblog.simpleblog.entity.Article;
 import com.sblog.simpleblog.entity.Comment;
 import com.sblog.simpleblog.entity.User;
+import com.sblog.simpleblog.service.ArticleHitService;
 import com.sblog.simpleblog.service.ArticleService;
 import com.sblog.simpleblog.service.CommentService;
 import com.sblog.simpleblog.service.UserService;
@@ -20,7 +21,13 @@ import java.util.Date;
 public class ArticleController {
     private CommentService commentService;
     private ArticleService articleService;
+    private ArticleHitService articleHitService;
     private UserService userService;
+
+    @Autowired
+    public void setArticleHitService(ArticleHitService articleHitService) {
+        this.articleHitService = articleHitService;
+    }
 
     @Autowired
     public void setCommentService(CommentService commentService) {
@@ -61,13 +68,9 @@ public class ArticleController {
     }
 
     @GetMapping("delete")
-    public ModelAndView deleteArticleAction(@RequestParam(name = "id") int id,
-                                            @Autowired HttpSession session) {
-        User user = (User) session.getAttribute("user");
+    public ModelAndView deleteArticleAction(@RequestParam(name = "id") int id) {
         Article article = articleService.findById(id);
-        if (article.getPublisher().getId().equals(user.getId())) {
-            articleService.remove(article);
-        }
+        articleService.remove(article);
         return new ModelAndView("redirect:/article/list");
     }
 
@@ -75,11 +78,7 @@ public class ArticleController {
     public ModelAndView updateArticleView(@RequestParam(name = "id") int id,
                                           @Autowired HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("/article/update");
-        User user = (User) session.getAttribute("user");
         Article article = articleService.findById(id);
-        if (!article.getPublisher().getId().equals(user.getId())) {
-            modelAndView.setViewName("redirect:/article/list");
-        }
         modelAndView.addObject("article", article);
         return modelAndView;
     }
@@ -88,6 +87,8 @@ public class ArticleController {
     public ModelAndView updateArticleAction(Article article, @Autowired HttpSession session) {
         User user = (User) session.getAttribute("user");
         article.setPublisher(user);
+        article.setPublishTime(new Date());
+        articleService.update(article);
         return new ModelAndView("redirect:/article/list");
     }
 

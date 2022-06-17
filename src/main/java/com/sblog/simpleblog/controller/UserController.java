@@ -55,10 +55,8 @@ public class UserController {
     @PostMapping("register")
     public ModelAndView registerAction(@Validated User user) {
         var modelAndView = new ModelAndView("/user/register");
-        if(!userService.existsByName(user.getName())){
             userService.register(user);
             modelAndView.setViewName("redirect:/user/login");
-        }
         return modelAndView;
     }
 
